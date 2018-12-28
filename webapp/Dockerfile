@@ -1,9 +1,4 @@
-FROM tecadmin/ubuntu-ssh:16.04
-
-RUN apt-get update \
-   && apt-get install -y apache2
-
-COPY index.html /var/www/html/
-WORKDIR /var/www/html
-CMD ["apachectl", "-D", "FOREGROUND"]
+FROM httpd:2.4
+RUN echo "ServerName localhost" >> /usr/local/apache2/conf/httpd.conf
+COPY index.html /usr/local/apache2/htdocs/
 EXPOSE 80

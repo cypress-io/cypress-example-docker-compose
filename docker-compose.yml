@@ -1,16 +1,8 @@
 version: '3'
 services:
-  # db:
-  #    image: mysql
-  #    container_name: mysql_db
-  #    restart: always
-  #    environment:
-  #       - MYSQL_ROOT_PASSWORD="secret"
   web:
     image: apache
     build: ./webapp
-    # depends_on:
-    #    - db
     container_name: apache
     restart: always
     ports:
@@ -22,3 +14,10 @@ services:
     container_name: cypress
     depends_on:
       - web
+    # note: inside e2e container, the network allows accessing
+    # "web" host under name "web"
+    # so "curl http://web" would return whatever the webserver
+    # in the "web" container is cooking
+    environment:
+      - CYPRESS_baseUrl=http://web
+    command: npx cypress run

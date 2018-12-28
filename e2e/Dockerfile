@@ -17,5 +17,3 @@ RUN npx cypress verify
 
 COPY cypress cypress
 COPY cypress.json .
-
-CMD ["npx", "cypress", "run"]

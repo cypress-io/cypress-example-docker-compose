@@ -1,44 +1,44 @@
 version: 2
 jobs:
   build:
-    docker:
-      # our end-to-end tests need Node
-      # primary container
-      - image: cypress/base:10
-      # secondary container - Python
-      - image: circleci/python:2
-
+    machine: true
     steps:
     - checkout
-    - restore_cache:
-        keys:
-        - cache-{{ .Branch }}-{{ checksum "package.json" }}
+    - setup_remote_docker
     - run:
-        name: Npm CI
-        command: npm ci
-    - run:
-        command: npx cypress verify
-    - save_cache:
-        key: cache-{{ .Branch }}-{{ checksum "package.json" }}
-        paths:
-        - ~/.npm
-        - ~/.cache
-    - persist_to_workspace:
-        root: ~/
-        paths:
-        - project
-        - .cache/Cypress
-    - attach_workspace:
-        at: ~/
-    - run:
-        name: Start Python server
-        command: python -m SimpleHTTPServer 8000
-        background: true
-    - run:
-        name: Run Cypress tests
-        command: 'npx cypress run'
+        name: Start
+        command: |
+          set -x
+          docker-compose up -d
+    # - restore_cache:
+    #     keys:
+    #     - cache-{{ .Branch }}-{{ checksum "package.json" }}
+    # - run:
+    #     name: Npm CI
+    #     command: npm ci
+    # - run:
+    #     command: npx cypress verify
+    # - save_cache:
+    #     key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+    #     paths:
+    #     - ~/.npm
+    #     - ~/.cache
+    # - persist_to_workspace:
+    #     root: ~/
+    #     paths:
+    #     - project
+    #     - .cache/Cypress
+    # - attach_workspace:
+    #     at: ~/
+    # - run:
+    #     name: Start Python server
+    #     command: python -m SimpleHTTPServer 8000
+    #     background: true
+    # - run:
+    #     name: Run Cypress tests
+    #     command: 'npx cypress run'
 workflows:
   build:
     jobs:
-    - cypress/run
+    - build
   version: 2

@@ -9,8 +9,8 @@ services:
   web:
     image: apache
     build: ./webapp
-    depends_on:
-       - db
+    # depends_on:
+    #    - db
     container_name: apache_web
     restart: always
     ports:

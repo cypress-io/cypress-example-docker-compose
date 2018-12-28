@@ -1,9 +1,13 @@
 version: 2
 jobs:
-  cypress/run:
+  build:
     docker:
-    - image: cypress/base:10
-    parallelism: 1
+      # our end-to-end tests need Node
+      # primary container
+      - image: cypress/base:10
+      # secondary container - Python
+      - image: circleci/python:2
+
     steps:
     - checkout
     - restore_cache:

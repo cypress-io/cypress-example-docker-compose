@@ -5,6 +5,7 @@ services:
     build: ./webapp
     container_name: apache
     restart: always
+    # we can see the server running at "localhost:8080"
     ports:
       - "8080:80"
 

@@ -1,5 +1,7 @@
 # circle-multi-image
 
-> Running Python server in one image and Cypress tests in another image on CircleCI
+> Apache + Cypress tests on CircleCI using docker-compose
 
 [![CircleCI](https://circleci.com/gh/bahmutov/circle-multi-image.svg?style=svg)](https://circleci.com/gh/bahmutov/circle-multi-image)
+
+See [docker-compose.yml](docker-compose.yml) file. First [container runs Apache](webapp/Dockerfile), second container has [Cypress tests](e2e/Dockerfile). Plus [circle.yml](circle.yml) file.

@@ -1,0 +1,24 @@
+{
+  "name": "circle-multi-image",
+  "version": "1.0.0",
+  "description": "Running Python server in one image and Cypress tests in another image on CircleCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/circle-multi-image.git"
+  },
+  "keywords": [],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com> (https://glebbahmutov.com/)",
+  "license": "ISC",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/bahmutov/circle-multi-image/issues"
+  },
+  "homepage": "https://github.com/bahmutov/circle-multi-image#readme",
+  "devDependencies": {
+    "cypress": "3.1.4"
+  }
+}

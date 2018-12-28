@@ -19,8 +19,17 @@ jobs:
         paths:
         - ~/.npm
         - ~/.cache
+    - persist_to_workspace:
+        root: ~/
+        paths:
+        - project
+        - .cache/Cypress
     - attach_workspace:
         at: ~/
+    - run:
+        name: Start Python server
+        command: python -m SimpleHTTPServer 8000
+        background: true
     - run:
         name: Run Cypress tests
         command: 'npx cypress run'

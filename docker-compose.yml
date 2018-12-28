@@ -19,6 +19,7 @@ services:
     # "web" host under name "web"
     # so "curl http://web" would return whatever the webserver
     # in the "web" container is cooking
+    # see https://docs.docker.com/compose/networking/
     environment:
       - CYPRESS_baseUrl=http://web
     command: npx cypress run

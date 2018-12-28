@@ -1,17 +1,24 @@
 version: '3'
 services:
-  db:
-     image: mysql
-     container_name: mysql_db
-     restart: always
-     environment:
-        - MYSQL_ROOT_PASSWORD="secret"
+  # db:
+  #    image: mysql
+  #    container_name: mysql_db
+  #    restart: always
+  #    environment:
+  #       - MYSQL_ROOT_PASSWORD="secret"
   web:
     image: apache
     build: ./webapp
     # depends_on:
     #    - db
-    container_name: apache_web
+    container_name: apache
     restart: always
     ports:
       - "8080:80"
+
+  e2e:
+    image: cypress
+    build: ./e2e
+    container_name: cypress
+    depends_on:
+      - web

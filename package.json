@@ -4,7 +4,7 @@
   "description": "Running Python server in one image and Cypress tests in another image on CircleCI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "docker-compose up --abort-on-container-exit --exit-code-from e2e",
     "effective:config": "circleci config process circle.yml | sed /^#/d"
   },
   "repository": {

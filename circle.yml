@@ -4,6 +4,7 @@ jobs:
     machine: true
     steps:
     - checkout
+    - run: docker-compose build
     - run: docker-compose up --abort-on-container-exit --exit-code-from e2e
 workflows:
   build:

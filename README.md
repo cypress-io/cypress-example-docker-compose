@@ -7,6 +7,8 @@
 See [docker-compose.yml](docker-compose.yml) and [circle.yml](circle.yml) files.
 First [container runs Apache](webapp/Dockerfile), second container has [Cypress tests](e2e/Dockerfile).
 
+**note:** for performance on CircleCI, I have turned [docker layer caching](https://circleci.com/docs/2.0/docker-layer-caching/) to avoid rebuilding Docker images unless they have changed.
+
 ## More info
 
 - [Cypress Docker docs](https://on.cypress.io/docker)

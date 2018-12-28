@@ -1,7 +1,7 @@
 {
   "name": "circle-multi-image",
   "version": "1.0.0",
-  "description": "Running Python server in one image and Cypress tests in another image on CircleCI",
+  "description": "Apache + Cypress tests on CircleCI using docker-compose",
   "main": "index.js",
   "scripts": {
     "build": "docker-compose build",

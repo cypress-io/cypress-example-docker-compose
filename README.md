@@ -4,4 +4,5 @@
 
 [![CircleCI](https://circleci.com/gh/bahmutov/circle-multi-image.svg?style=svg)](https://circleci.com/gh/bahmutov/circle-multi-image)
 
-See [docker-compose.yml](docker-compose.yml) file. First [container runs Apache](webapp/Dockerfile), second container has [Cypress tests](e2e/Dockerfile). Plus [circle.yml](circle.yml) file.
+See [docker-compose.yml](docker-compose.yml) and [circle.yml](circle.yml) files.
+First [container runs Apache](webapp/Dockerfile), second container has [Cypress tests](e2e/Dockerfile).

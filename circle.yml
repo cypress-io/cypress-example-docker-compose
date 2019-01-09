@@ -1,8 +1,11 @@
 version: 2
 jobs:
   build:
+    # to speed up Dockers builds turn on layer caching
+    # which is a paid CircleCI feature
+    # https://circleci.com/docs/2.0/docker-layer-caching/
     machine:
-      docker_layer_caching: true
+      docker_layer_caching: false
     steps:
     - checkout
     - run: docker-compose build

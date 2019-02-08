@@ -11,7 +11,12 @@ services:
 
   e2e:
     image: cypress
-    build: ./e2e
+    build: 
+      context: ./e2e
+      args:
+        - http_proxy 
+        - https_proxy
+        - no_proxy
     container_name: cypress
     depends_on:
       - web

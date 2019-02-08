@@ -1,4 +1,7 @@
 FROM cypress/base:10
+ARG http_proxy 
+ARG https_proxy
+ARG no_proxy
 WORKDIR /app
 
 # dependencies will be installed only if the package files change

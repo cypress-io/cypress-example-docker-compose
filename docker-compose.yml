@@ -23,3 +23,6 @@ services:
     environment:
       - CYPRESS_baseUrl=http://web
     command: npx cypress run
+    volumes:
+      - ./e2e/cypress:/app/cypress
+      - ./e2e/cypress.json:/app/cypress.json

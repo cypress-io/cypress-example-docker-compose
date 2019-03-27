@@ -14,6 +14,3 @@ RUN npm ci
 # running this command separately from "cypress run" will also cache its result
 # to avoid verifying again when running the tests
 RUN npx cypress verify
-
-COPY cypress cypress
-COPY cypress.json .

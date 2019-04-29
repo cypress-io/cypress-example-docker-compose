@@ -23,6 +23,14 @@ services:
     environment:
       - CYPRESS_baseUrl=http://web
     command: npx cypress run
+    # mount the host directory e2e/cypress and the file e2e/cypress.json as
+    # volumes within the container
+    # this means that:
+    #  1. anything that Cypress writes to these folders (e.g., screenshots,
+    #     videos) appears also on the Docker host's filesystem
+    #  2. any change that the developer applies to Cypress files on the host
+    #     machine immediately takes effect within the e2e container (no docker
+    #     rebuild required).
     volumes:
       - ./e2e/cypress:/app/cypress
       - ./e2e/cypress.json:/app/cypress.json

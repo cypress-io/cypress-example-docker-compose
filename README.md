@@ -14,6 +14,7 @@ First [container runs Apache](webapp/Dockerfile), second container has [Cypress 
 - [Cypress Docker docs](https://on.cypress.io/docker)
 - [Cypress continuous integration docs](https://on.cypress.io/ci)
 - [docker-compose networking](https://docs.docker.com/compose/networking/)
+- Read the excellent [End-to-End Testing Web Apps: The Painless Way](https://mtlynch.io/painless-web-app-testing/)
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/

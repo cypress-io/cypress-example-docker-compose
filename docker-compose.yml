@@ -2,7 +2,12 @@ version: '3'
 services:
   web:
     image: apache
-    build: ./webapp
+    build: 
+      context: ./e2e
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
     container_name: apache
     restart: always
     # we can see the server running at "localhost:8080"

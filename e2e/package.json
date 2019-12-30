@@ -11,6 +11,6 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "cypress": "3.8.0"
+    "cypress": "3.8.1"
   }
 }

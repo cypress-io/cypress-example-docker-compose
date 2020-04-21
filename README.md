@@ -9,6 +9,11 @@ First [container runs Apache](webapp/Dockerfile), second container has [Cypress 
 
 **note:** for performance on CircleCI, I have turned [docker layer caching](https://circleci.com/docs/2.0/docker-layer-caching/) to avoid rebuilding Docker images unless they have changed.
 
+## Use
+
+1. build the containers with `npm run build`
+2. start the web application and run Cypress tests with `npm run up`
+
 ## More info
 
 - [Cypress Docker docs](https://on.cypress.io/docker)

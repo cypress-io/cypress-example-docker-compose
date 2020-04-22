@@ -10,6 +10,8 @@ jobs:
     - checkout
     - run: docker-compose build
     - run: docker-compose up --abort-on-container-exit --exit-code-from e2e
+    # confirms Cypress ran correctly by looking at the output file
+    - run: cat e2e/cypress/results/output.xml
 workflows:
   build:
     jobs:

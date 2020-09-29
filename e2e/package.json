@@ -11,6 +11,6 @@
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "cypress": "5.2.0"
+    "cypress": "5.3.0"
   }
 }

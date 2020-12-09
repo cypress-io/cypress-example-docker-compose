@@ -1,3 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="StyleSheet/CSS/self-introduction.css">
+    <link rel="stylesheet" href="StyleSheet/CSS/hobby.css">
+    <link rel="stylesheet" href="StyleSheet/CSS/favorite.css">
+    <link rel="stylesheet" href="StyleSheet/CSS/favorite-link.css">
+    <title>山田太郎の自己紹介</title>
+
+  <!-- 画像をスライドショー表示する際に必要なコード -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+        });
+  </script>
+</head>
+
 <body>
-  Hi there!
+  <h1>山田太郎の自己紹介</h1>
+  <!-- 自己紹介のブロック -->
+  <div class="self-introduction">
+      <img class="self-introduction__picture" src="image/kagata.jpg">
+    <div class="self-introduction__texts">
+      <p>Name : 山田太郎</p>
+      <p>Age  : xx歳</p>
+      <p>From : xx県</p>
+      <p>TEL  : XXX-XXX</p>
+    </div>
+ </div>
+  
+  <hr>
+ <!-- 趣味紹介のブロック -->
+ <div class="hobby">
+   <div class="hobby__text">
+    <h2 class="hobby__text--red">趣味:釣り</h2>
+    <p>主にイカ釣りをしています！写真は2年くらい前のもの...</p>
+  </div>
+　 <img class="hobby__picture" src="image/ika.JPG">
+ </div>
+
+ <hr>
+ <!-- 好きなもののブロック -->
+ <div class="favorite">
+  <h2>猫が好き！！</h2>
+  <div class="favorite-link"> <!-- 別ブロック -->
+    <a href="https://www.google.com/maps/place/%E7%8C%AB%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AF%E3%83%AD/@35.4577386,133.359276,17z/data=!3m1!4b1!4m5!3m4!1s0x3556587b32d24adf:0x5666160dd6110b92!8m2!3d35.4577386!4d133.3614647">
+      <img class="favorite-link__picture" src="image/cat1.JPG">
+    </a>
+    <div class="favorite-link__text">xxxx</div>
+  </div>
+  <div class="favorite-link">
+      <a href="https://www.google.com/maps?q=%E6%B0%B4%E6%9C%A8%E3%81%97%E3%81%92%E3%82%8B%E3%83%AD%E3%83%BC%E3%83%89&rlz=1C1QABZ_jaJP895JP895&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiMs83R9JTsAhVP05QKHcNvDckQ_AUoAXoECBwQAw">
+        <img class="favorite-link__picture" src="image/cat2.JPG">
+      </a>
+    <div class="favorite-link__text">xxxx</div>
+  </div>
+  <div class="favorite__texts">
+    <p>画像はそれぞれ実際に撮影したものです！</p>
+    <p>画像をクリックすると地図にジャンプ</p> 
+  </div>
+ </div>
+
+  <div class="slider">
+    <img class="slider__picture" src="image/SandMuseum1.JPG">
+    <img class="slider__picture" src="image/SandMuseum2.JPG">
+    <img class="slider__picture" src="image/SandMuseum3.JPG">
+    <img class="slider__picture" src="image/SandMuseum4.JPG">
+  </div>
 </body>
+
+</html>

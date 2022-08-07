@@ -31,6 +31,8 @@ services:
     #  2. any change that the developer applies to Cypress files on the host
     #     machine immediately takes effect within the e2e container (no docker
     #     rebuild required).
+    network_mode: host # for linux
     volumes:
       - ./e2e/cypress:/app/cypress
       - ./e2e/cypress.config.js:/app/cypress.config.js
+      - ~/.Xauthority:/root/.Xauthority:rw  # for running Cypress GUI

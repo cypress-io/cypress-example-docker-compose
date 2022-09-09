@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM httpd:latest
 # prevent error message
 #  AH00558: apache2: Could not reliably determine
 #  the server's fully qualified domain name"

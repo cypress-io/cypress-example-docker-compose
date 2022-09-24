@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    # to speed up Dockers builds turn on layer caching
+    # which is a paid CircleCI feature
+    # https://circleci.com/docs/2.0/docker-layer-caching/
+    machine:
+      docker_layer_caching: false
+    steps:
+    - checkout
+    - run: docker-compose build
+    - run: docker-compose up --abort-on-container-exit --exit-code-from e2e
+    # confirms Cypress ran correctly by looking at the output file
+    - run: cat e2e/cypress/results/output.xml
+workflows:
+  build:
+    jobs:
+    - build
+  version: 2

@@ -1,4 +1,4 @@
-FROM cypress/base:14
+FROM cypress/base:16
 
 # For using Cypress GUI in linux use the following
 # FROM cypress/browsers:chrome69 as e2eBuild

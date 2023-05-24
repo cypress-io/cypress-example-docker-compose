@@ -23,6 +23,7 @@ services:
     environment:
       - CYPRESS_baseUrl=http://web
     command: npx cypress run
+    # network_mode: host # uncomment for running Cypress GUI
     # mount the host directory e2e/cypress and the file e2e/cypress.config.js as
     # volumes within the container
     # this means that:
@@ -34,3 +35,4 @@ services:
     volumes:
       - ./e2e/cypress:/app/cypress
       - ./e2e/cypress.config.js:/app/cypress.config.js
+      # - ~/.Xauthority:/root/.Xauthority:rw  # uncomment for running Cypress GUI

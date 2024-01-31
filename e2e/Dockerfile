@@ -1,4 +1,7 @@
 FROM cypress/base:16
+# For using Cypress GUI in linux use the following
+# FROM cypress/browsers:chrome69 as e2eBuild
+# RUN apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth
 WORKDIR /app
 
 # dependencies will be installed only if the package files change
